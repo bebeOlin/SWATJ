@@ -1,0 +1,35 @@
+<app-header></app-header>
+<div class="container">
+  <div class="row">
+    <div class="col col-md-4 offset-md-4 text-center">
+      <div *ngIf="isLoading == true" class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <div *ngIf="currentCharacter != null" class="card">
+        <img *ngIf="pictureUrl != ''" [src]="pictureUrl" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">{{currentCharacter.name}}</h5>
+          <p class="card-text">Mass: {{currentCharacter.mass}}<br>
+            Hair Color: {{currentCharacter.hair_color}}<br>
+            Eye Color: {{currentCharacter.eye_color}}<br>
+            DOB: {{currentCharacter.birth_year}}<br>
+            Gender: {{currentCharacter.gender}}</p>
+          <div class="row">
+            <div class="col">
+              <div class="d-grid">
+                <a href="#" (click)="clickedButton()" class="btn btn-dark"><i class="bi bi-hand-thumbs-down"></i></a>
+              </div>
+            </div>
+            <div class="col">
+              <div class="d-grid">
+                <a href="#" (click)="clickedButton()" class="btn btn-secondary bg-pink"><i
+                    class="bi bi-hand-thumbs-up"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
